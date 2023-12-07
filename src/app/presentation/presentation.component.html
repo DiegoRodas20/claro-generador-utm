@@ -1,0 +1,75 @@
+<div>
+    <img src="../../assets/images/claro_logo.png" style="width:7%">
+</div>
+
+<h1 class="text-center">Generador UTM</h1>
+  
+<div class="col-12">
+  <form [formGroup]="formPresentation">
+    <div class="grid pt-5">
+      <p-dropdown
+        formControlName="product"
+        class="col-4"
+        [options]="products"
+        optionLabel="name"
+        [showClear]="true"
+        placeholder="Selecciona el producto"
+      ></p-dropdown>
+
+      <p-dropdown
+        formControlName="campaign"
+        class="col-4"
+        [options]="campaigns"
+        optionLabel="name"
+        placeholder="Selecciona la Campaña"
+      ></p-dropdown>
+      
+      <p-dropdown
+        formControlName="source_campaign"
+        class="col-4"
+        [options]="sourcesCampaign"
+        optionLabel="name"
+        [showClear]="true"
+        placeholder="Selecciona la fuente"
+      ></p-dropdown>
+
+      <p-dropdown
+        formControlName="channel"
+        class="col-4"
+        [options]="channels"
+        optionLabel="name"
+        [showClear]="true"
+        placeholder="Selecciona el medio"
+      ></p-dropdown>
+
+      <p-dropdown
+        formControlName="reference"
+        class="col-4"
+        [options]="references"
+        optionLabel="name"
+        [showClear]="true"
+        placeholder="Selecciona el formato"
+      ></p-dropdown>
+
+      <p-dropdown
+        formControlName="type_campaign"
+        class="col-4"
+        [options]="typesCampaign"
+        optionLabel="name"
+        [showClear]="true"
+        placeholder="Selecciona el tipo"
+      ></p-dropdown>
+    </div>
+
+    <div class="text-right p-4">
+      <p-button (onClick)="generateUTM()">Generar UTM</p-button>
+    </div>
+    <textarea
+      rows="12"
+      cols="30"
+      pInputTextarea
+      class="w-full"
+      formControlName="url_utm"
+    ></textarea>
+  </form>
+</div>
